@@ -48,3 +48,5 @@ nbdist/
 # Others
 uploadPath/
 logs/
+
+.vscode/

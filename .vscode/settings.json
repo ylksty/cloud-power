@@ -1,4 +1,5 @@
 {
   "native-ascii-converter.auto-conversion-on-activate": true,
-  "native-ascii-converter.comment-conversion": false
+  "native-ascii-converter.comment-conversion": false,
+  "maven.view": "hierarchical"
 }
