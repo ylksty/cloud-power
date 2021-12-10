@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringCloud</title>
+</head>
+
+<body th:inline="text">
+
+    <div th:style="'margin:auto; background-color: whitesmoke; width: 1202px; height: 45px; line-height: 45px;'">
+        <div style="margin:auto; float:left; width:1000px;">
+            主题频道
+            生活助手
+            会员服务
+            更多热点
+            商家入驻
+        </div>
+        <div style="margin:auto; float:left; width:200px;">
+            请登录
+            请注册
+            商家入驻
+        </div>
+    </div>
+
+    <div id="content" style="margin:auto; width:1202px;">
+
+        <div style="margin: 10px; height: 75px; line-height: 75px;">
+            <div style="float: left; line-height: 50px;"><img th:src="@{/image/logo.png}"></div>
+            <div style="float: left; width: 170px;">&nbsp;</div>
+            <div style="float: left;line-height: 50px;"><input type="text" style="width: 430px; height: 40px;">&nbsp;&nbsp;搜索</div>
+        </div>
+    </div>
+
+    <div style="margin:0 auto; width:1202px;">
+        <!--左侧的div-->
+        <div style="float: left;margin: 18px;">
+            <img th:src="@{${goods.imageUrl}}">
+        </div>
+
+        <!--右侧的div-->
+        <div style="float: left;margin: 18px;">
+            <p>
+            [[${goods.name}]] [[${goods.nameDesc}]]
+            </p>
+            <p>
+            <span style="color: red;font-size:20px;font-weight: bold;">[[${goods.price}]]</span>
+            </p>
+            <p>
+            剩余：[[${goods.store}]] 件
+            </p>
+            <p>
+                购买：<input type="text" id="buyNum" name="buyNum" value="1"> 件
+            </p>
+
+            <p id="buyTip">
+                <!--显示秒杀按钮的区域-->
+                <button type='button' id='buyBtn' onclick="submitBuy()">立即购买</button>
+            </p>
+        </div>
+    </div>
+    <!--导入jQuery的js文件-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+
+    <!--导入秒杀的js文件-->
+    <script th:src="@{/js/order.js}"></script>
+
+    <script type="text/javascript" th:inline="javascript">
+        function submitBuy () {
+            buyObject.contextPath = [[${#request.getContextPath()}]];
+            //页面初始化操作：判断商品是否可以购买，是否需要展示“立即购买按钮”
+            var id = [[${goods.id}]];
+            var buyNum = $("#buyNum").val();
+            buyObject.func.submitBuy(id, buyNum);
+        }
+    </script>
+</body>
+</html>

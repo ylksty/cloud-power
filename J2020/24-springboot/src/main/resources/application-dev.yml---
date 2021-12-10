@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /24-springboot
+
+spring:
+  main:
+    banner-mode: console
+    allow-bean-definition-overriding: true
+
+  datasource:
+    url: jdbc:mysql://192.168.172.127:3306/mybatis?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useSSL=false
+    username: ENC(44WdFjkoq6IQsutoeACsTAzdu8W6qPPbievCkJ36tJ9l5IYaVpkUK+NpPG9uPCFc)
+    password: ENC(4YGp/Ps1lrkf4dJfN85JLLY35lCMvrGJP39ucrw/8gO9G9NNCh8XiN0zABKQr0jF)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+jasypt:
+  encryptor:
+    password: 28347rg$%89hesfgwe

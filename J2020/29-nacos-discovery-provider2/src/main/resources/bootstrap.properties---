@@ -1,0 +1,8 @@
+server.port=8082
+
+spring.application.name=29-nacos-discovery-provider
+
+#nacos\u914D\u7F6E\u4E2D\u5FC3\u7684\u8FDE\u63A5\u5730\u5740
+spring.cloud.nacos.config.server-addr=192.168.172.128:8848
+spring.cloud.nacos.username=nacos
+spring.cloud.nacos.password=nacos

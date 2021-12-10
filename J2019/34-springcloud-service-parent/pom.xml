@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--继承springboot父项目-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.bjpowernode.springcloud</groupId>
+    <artifactId>34-springcloud-service-parent</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!--聚合各个子项目-->
+    <modules>
+        <module>../34-springcloud-service-commons</module>
+        <module>../34-springcloud-service-eureka</module>
+        <module>../34-springcloud-service-goods-9100</module>
+        <module>../34-springcloud-service-goods-9200</module>
+        <module>../34-springcloud-service-orders</module>
+        <module>../34-springcloud-service-portal-8080</module>
+        <module>../34-springcloud-service-portal-8081</module>
+        <module>../34-springcloud-service-dashboard</module>
+        <module>../34-springcloud-service-config</module>
+        <module>../34-springcloud-service-zuul</module>
+        <module>../34-springcloud-service-turbine</module>
+        <module>../34-springcloud-service-zipkin</module>
+        <module>../34-springcloud-service-auth</module>
+        <module>../34-springcloud-service-stream-consumer</module>
+        <module>../34-springcloud-service-stream-consumer2</module>
+        <module>../34-springcloud-service-stream-producer</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring-cloud-dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

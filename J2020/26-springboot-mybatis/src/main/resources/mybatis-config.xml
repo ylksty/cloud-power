@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!--mybatis框架的核心功能可以通过该配置进行设置-->
+    <settings>
+        <!--mybatis输出日志，采用何种组件输出-->
+        <setting name="logImpl" value="SLF4J"/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+</configuration>
